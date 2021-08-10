@@ -1,0 +1,29 @@
+I"	<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="s">"""
+Argument parser template
+"""</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="p">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">'Your application description'</span><span class="p">)</span>
+<span class="c1"># simple argument (mandatory)
+</span><span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">'some description'</span><span class="p">)</span>
+<span class="c1"># cast positional argument to int
+</span><span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'b'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">'some description'</span><span class="p">)</span>
+<span class="c1"># option (optional)
+</span><span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-r'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">'some description'</span><span class="p">)</span>
+<span class="c1"># set silent=True if this option available
+</span><span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-s'</span><span class="p">,</span> <span class="s">'--silent'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">'store_true'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">'some description'</span><span class="p">)</span>
+<span class="c1"># parse arguments/options to an object args
+</span><span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="c1"># call the arguments/options
+</span><span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">r</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">s</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">silent</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+:ET
